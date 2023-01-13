@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ND940C3-Project</string>
     <string name="app_description">Download files from Internet</string>
     <string name="action_settings">Settings</string>
@@ -9,6 +9,15 @@
     <string name="notification_button">See changes</string>
 
     <string name="button_name">Click me</string>
-    <string name="button_loading">We are loading </string>
+    <string name="button_loading">We are loading...</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="download_detail">Download Details</string>
+    <string name="download_label">Download</string>
+    <string name="glide_download_option_label">Glide - Image Loading Libarary by Bubtech</string>
+    <string name="Load_app_download_option_label">LoadApp - Current possition by Udacity</string>
+    <string name="retrofit_download_option_label">"Retrofit - Type-safe HTTP Client for android and Java Square ,Inc "</string>
+    <string name="please_select_download_option_message">Please Select download option before start download.</string>
+    <string name="download_completed_message">DownloadCompleted</string>
+    <string name="download_notification_channel_id">download_channel</string>
+    <string name="download_notification_channel_name">Download Channel</string>
 </resources>

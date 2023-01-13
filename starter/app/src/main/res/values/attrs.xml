@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="LoadingButton">
-<!--   TODO: create custom attributes for the view-->
+        <attr name="text_color" format="color" />
+        <attr name="text_color_click" format="color" />
+        <attr name="background_color" format="color" />
+        <attr name="background_color_click" format="color" />
+        <attr name="background_color_loading" format="color" />
+        <attr name="stroke_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="stroke_width" format="dimension" />
+        <attr name="stroke_shadow_width" format="dimension" />
+        <attr name="stroke_curve" format="dimension" />
+        <attr name="text" format="string" />
+        <attr name="loading_text" format="string" />
+    
     </declare-styleable>
 </resources>
