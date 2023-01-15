@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
             Log.e("Download Manager Receiver ", "receiver Completed")
 
-            custom_button.buttonState=ButtonState.Completed
+            custom_button.buttonState = ButtonState.Completed
 
             //DownloadManager.Query() is used to filter DownloadManager queries
             val query = DownloadManager.Query()
@@ -65,22 +65,19 @@ class MainActivity : AppCompatActivity() {
             val cursor = downloadManager.query(query)
 
             if (cursor.moveToFirst()) {
-
+                val downloadTitle = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_TITLE))
                 when (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))) {
                     DownloadManager.STATUS_SUCCESSFUL -> {
-                        context?.let { sendNotification("test","Completed", it) }
-
+                        context?.let { sendNotification(downloadTitle, getString(R.string.download_completed_label), it) }
                     }
                     DownloadManager.STATUS_FAILED -> {
-                        context?.let { sendNotification("test","Fails", it) }
-
+                        context?.let { sendNotification(downloadTitle, getString(R.string.download_failed_label), it) }
                     }
 
                 }
             }
 
         }
-
 
     }
 
@@ -106,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
         downloadID = downloadManager.enqueue(request)// enqueue puts the download request in the queue.
 
-        custom_button.buttonState=ButtonState.Loading
+        custom_button.buttonState = ButtonState.Loading
 
     }
 

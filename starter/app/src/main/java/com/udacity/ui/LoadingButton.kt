@@ -11,9 +11,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.google.android.play.core.internal.ca
 import com.udacity.R
-import kotlinx.coroutines.delay
 import kotlin.properties.Delegates
 
 
@@ -22,7 +20,7 @@ class LoadingButton @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
     private var widthSize = 0
     private var heightSize = 0
-    var progress: Float = 0.9f
+    private var progress: Float = 0.9f
     private val valueAnimator = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(2000)
 
 
@@ -42,6 +40,7 @@ class LoadingButton @JvmOverloads constructor(
     private var buttonText = ""
 
     private lateinit var boxShadow: RectF
+    private lateinit var boxLoading: RectF
     private lateinit var boxBackground: RectF
     private lateinit var boxShadowPaint: Paint
     private lateinit var boxBackgroundPaint: Paint
@@ -50,7 +49,7 @@ class LoadingButton @JvmOverloads constructor(
     private var textSmallGlyphHeight = 0f
     private lateinit var textPaint: Paint
 
-    var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
+    var buttonState: ButtonState by Delegates.observable(ButtonState.Completed) { p, old, new ->
 
         when (new) {
             ButtonState.Clicked -> {
@@ -59,7 +58,6 @@ class LoadingButton @JvmOverloads constructor(
                 textPaint.textSize = fontSize + convertDpToPixel(8f)
                 boxBackgroundPaint.color = boxBackGroundColorClick
                 textWidth = textPaint.measureText(text)
-
             }
             ButtonState.Loading -> {
                 Log.e("++Button State ", "is Loading")
@@ -95,7 +93,7 @@ class LoadingButton @JvmOverloads constructor(
     }
 
     private fun initViewCustomAttributes(attrs: AttributeSet?) {
-        var attributeArray: TypedArray? = context.theme.obtainStyledAttributes(
+        val attributeArray: TypedArray = context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.LoadingButton, 0, 0
         )
@@ -121,7 +119,7 @@ class LoadingButton @JvmOverloads constructor(
         val minW: Int = paddingLeft + paddingRight + suggestedMinimumWidth
         val w: Int = resolveSizeAndState(minW, widthMeasureSpec, 1)
         val h: Int = resolveSizeAndState(
-            View.MeasureSpec.getSize(w),
+            MeasureSpec.getSize(w),
             heightMeasureSpec,
             0
         )
@@ -136,6 +134,7 @@ class LoadingButton @JvmOverloads constructor(
         Log.e("Loading Button", "loading button on size changed")
 
         boxShadow = RectF(0f, 0f, w.toFloat(), h.toFloat())
+         boxLoading = RectF(0f, 0f, w.toFloat(), h.toFloat())
         boxBackground = RectF(
             boxStrokeWidth, boxStrokeWidth,
             w.toFloat() - boxStrokeWidth, h.toFloat() - boxStrokeWidth - boxShadowSize
@@ -171,8 +170,9 @@ class LoadingButton @JvmOverloads constructor(
             //draw progress
 
             if (buttonState == ButtonState.Loading) {
-                val dx = it.width * progress
-                it.drawRoundRect(RectF(dx, 0f, it.width * 1f, it.height * 1f), boxRadius, boxRadius, progressPaint)
+                val dx = width * progress
+                boxLoading.left=dx
+                it.drawRoundRect(boxLoading, boxRadius, boxRadius, progressPaint)
             }
 
             //draw text.
@@ -202,7 +202,6 @@ class LoadingButton @JvmOverloads constructor(
 
         updateClickStatus()
 
-
         //delay 250 ms to display click event effect
         Handler(Looper.getMainLooper()).postDelayed({
         }, 250)
@@ -213,8 +212,6 @@ class LoadingButton @JvmOverloads constructor(
     private fun updateClickStatus() {
         buttonState = ButtonState.Clicked
         invalidate()
-
-
     }
 
     private fun convertDpToPixel(dp: Float) =
