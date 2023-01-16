@@ -20,6 +20,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
 
+
         activityDetailBinding.fabOk.setOnClickListener {
             finish()
         }
@@ -29,6 +30,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
+
         val extras = intent.extras
         fileName = extras?.getString(EXTRA_DOWNLOAD_FILE_NAME, "0").toString()
         downloadStatus = extras?.getString(EXTRA_DOWNLOAD_STATUS, "0").toString()
