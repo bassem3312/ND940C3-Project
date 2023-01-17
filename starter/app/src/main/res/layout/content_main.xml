@@ -8,15 +8,79 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
-
-    <com.udacity.LoadingButton
+    
+    
+    <ImageView
+        android:id="@+id/img_download_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:elevation="10dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:srcCompat="@drawable/ic_download" />
+    
+    <RadioGroup
+        android:id="@+id/rdG_download_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/custom_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_download_banner">
+        
+        <RadioButton
+            android:id="@+id/rdB_download_glide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/glide_download_option_label"
+            android:textSize="24sp" />
+        
+        <RadioButton
+            android:id="@+id/rdB_download_load_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp"
+            android:text="@string/Load_app_download_option_label"
+            android:textSize="24sp" />
+        
+        <RadioButton
+            android:id="@+id/rdB_download_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/retrofit_download_option_label"
+            android:textSize="24sp" />
+    </RadioGroup>
+    
+    <com.udacity.ui.LoadingButton xmlns:loading_button="http://schemas.android.com/apk/res-auto"
         android:id="@+id/custom_button"
         android:layout_width="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="60dp"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        loading_button:background_color="@color/white"
+        loading_button:background_color_click="@color/colorPrimaryDark"
+        loading_button:background_color_loading="@android:color/darker_gray"
+        loading_button:loading_text="@string/button_loading"
+        loading_button:stroke_color="@color/colorPrimary"
+        loading_button:stroke_curve="50dp"
+        loading_button:stroke_shadow_width="1dp"
+        loading_button:stroke_width="2dp"
+        loading_button:text="@string/download_label"
+        loading_button:text_color="@color/colorPrimaryDark"
+        loading_button:text_color_click="@color/white"
+        loading_button:text_size="18sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
