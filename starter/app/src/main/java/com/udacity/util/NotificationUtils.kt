@@ -28,6 +28,7 @@ fun NotificationManager.sendNotification(messageBody: String, status: String, ap
     contentIntent.putExtra(EXTRA_DOWNLOAD_STATUS, status)
     val pendingIntent: PendingIntent = PendingIntent.getActivity(appContext, NOTIFICATION_ID, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT)
 
+    //Bassem Mohsen
 
     val downloadImage = BitmapFactory.decodeResource(
         appContext.resources,
