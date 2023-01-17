@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d944b405-2121-452f-947b-3c15b62ecf60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/util/NotificationUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/app/src/main/res/drawable/ic_download.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/app/src/main/res/drawable/ic_downloading_notification.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/ButtonState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/ui/ButtonState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/DetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/DetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/LoadingButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/ui/LoadingButton.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/java/com/udacity/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/starter/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starter/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d944b405-2121-452f-947b-3c15b62ecf60" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

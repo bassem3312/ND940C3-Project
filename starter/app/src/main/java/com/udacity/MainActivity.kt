@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("Range")
     private fun download(downloadURL: String, fileName: String) {
 
-        //branch development
+        //branch development 2 
          val request =
             DownloadManager.Request(Uri.parse(downloadURL))
                 .setTitle(fileName)
