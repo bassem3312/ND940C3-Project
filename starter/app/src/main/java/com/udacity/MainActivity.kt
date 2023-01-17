@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        var s="slksldk;lkde;"
+
 
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
@@ -91,8 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("Range")
     private fun download(downloadURL: String, fileName: String) {
-
-        val request =
+         val request =
             DownloadManager.Request(Uri.parse(downloadURL))
                 .setTitle(fileName)
                 .setDescription(getString(R.string.app_description))
