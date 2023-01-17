@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var downloadManager: DownloadManager
     private var downloadID: Long = 0
 
+    //Bassem mohsen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("Range")
     private fun download(downloadURL: String, fileName: String) {
 
-        //branch development 2 33f rrt
+        //branch development 2 33f rrt 44
          val request =
             DownloadManager.Request(Uri.parse(downloadURL))
                 .setTitle(fileName)
